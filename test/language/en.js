@@ -1,0 +1,3 @@
+{
+	"thisLocale": "English"
+}

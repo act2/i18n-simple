@@ -1,0 +1,16 @@
+{
+	"errors" : {
+		"badLocalesDir" : "Directorio de idiomas no válidos - directorio \"{{dir}}\" no existe",
+		"badLocaleFile" : "Archivo idioma no válidos - \"{{file}}\" no existe",
+		"badDefaultLocale" : "Nueva default idioma \"{{locale}}\" no está en la lista de idiomas aceptables",
+		"badCurrentLocale" : "Nueva idioma actual \"{{locale}}\" no está en la lista de idiomas aceptables",
+		"badSuppliedLocale" : "Se suministra idioma \"{{locale}}\" no está en la lista de idiomas aceptables",
+		"badParameter" : {
+			"expectsString" : "Parámetro no válido - espera que el valor de cadena literal",
+			"missingKey" : "\"Key\" parámetro necesario",
+			"badPlural" : "Parámetro no válido plural - que se espera boolean o número",
+			"badGender" : "Parámetro de género no válido - espera que sea \"{{female}}\", \"{{male}}\" o \"{{neutral}}\"",
+			"badReplacements" : "Parámetro \"replacements\" no válido - espera objeto JSON"
+		}
+	}
+}

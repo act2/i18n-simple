@@ -1,0 +1,16 @@
+{
+	"errors" : {
+		"badLocalesDir" : "無効なイディオムディレクトリ - ディレクトリ \"{{dir}}\" 存在しません",
+		"badLocaleFile" : "無効なイディオムファイル - \"{{file}}\" 存在しません",
+		"badDefaultLocale" : "新しいデフォルトのイディオム \"{{idiom}}\" 許容可能な慣用句のリストに含まれていない",
+		"badCurrentLocale" : "新しい現在のイディオム \"{{idiom}}\" 許容可能な慣用句のリストに含まれていない",
+		"badSuppliedLocale" : "付属のイディオム \"{{idiom}}\" 許容可能な慣用句のリストに含まれていない",
+		"badParameter" : {
+			"expectsString" : "無効なパラメータは - リテラル文字列の値を期待して",
+			"missingKey" : "\"Key\" パラメータ必須",
+			"badPlural" : "無効な複数のパラメータ - 期待ブールまたは数値",
+			"badGender" : "無効な男女のパラメータは - 期待してのどちらか \"{{female}}\", \"{{male}}\" または \"{{neutral}}\"",
+			"badReplacements" : "無効 \"replacements\" パラメータは、 - JSONオブジェクトを想定し"
+		}
+	}
+}

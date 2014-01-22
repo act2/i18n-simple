@@ -1,0 +1,92 @@
+{
+	"Hello": "Hello",
+	"name" : "Mickey Mouse",
+	"HelloReferencesOnly": "{{Hello}}, {{name}}! {{Goodbye}}",
+	"Hi": {
+		"noName" : "Hi",
+		"withName": "Hi, {{name}}!",
+		"withSpouse": "Hi, {{name}}! How is {{ spouse }}?"
+	},
+	"Howdy": {
+		"default": "Howdy!",
+		"plural": {
+			"one": {
+				"gender" : {
+					"female": "Howdy, ma'am!",
+					"male": "Howdy, sir!",
+					"neutral": "Howdy there!"
+				}
+			},
+			"other": {
+				"gender" : {
+					"female": "Howdy, ladies!",
+					"male": "Howdy, gents!",
+					"neutral": "Howdy, y'all!"
+				}
+			}
+		}
+	},
+	"Goodbye": {
+		"default": "Goodbye!",
+		"gender" : {
+			"female": {
+				"plural": {
+					"one": "Goodbye, ma'am!",
+					"other": "Goodbye, ladies!"
+				}
+			},
+			"male": {
+				"plural": {
+					"one": "Goodbye, sir!",
+					"other": "Goodbye, gents!"
+				}
+			},
+			"neutral": {
+				"plural": {
+					"one": "Goodbye there!",
+					"other": "Goodbye, y'all!"
+				}
+			}
+		}
+	},
+	"dogs" : {
+		"default" : "doggies",
+		"plural" : {
+			"one" : "dog",
+			"other" : "dogs"
+		}
+	},
+	"3rdPersonPossessiveSingular" : {
+		"default" : "her/his/its",
+		"gender" : {
+			"female" : "her",
+			"male" : "his",
+			"neutral": "its"
+		}
+	},
+	"relativeReferenceSimple" : {
+		"one" : "one",
+		"two" : "two",
+		"three" : "@one",
+		"four" : "@one"
+	},
+	"relativeReferenceComplex": {
+		"default": "default relative reference",
+		"plural": {
+			"one": {
+				"gender" : {
+					"female": "relative female {{ref}}",
+					"male": "relative male {{ref}}",
+					"neutral": "@male"
+				}
+			},
+			"other": {
+				"gender" : {
+					"female": "relative females {{ref}}",
+					"male": "relative males {{ref}}",
+					"neutral": "@male"
+				}
+			}
+		}
+	}
+}

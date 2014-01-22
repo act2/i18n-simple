@@ -1,0 +1,16 @@
+{
+	"errors" : {
+		"badLocalesDir" : "Non valido Elenco locale - Elenco \"{{dir}}\" non esiste",
+		"badLocaleFile" : "Non valido il file locale - \"{{file}}\" non esiste",
+		"badDefaultLocale" : "Nuovo locale predefinito \"{{locale}}\" non è nella lista dei locali accettabile",
+		"badCurrentLocale" : "Nuovo locale corrente \"{{locale}}\" non è nella lista dei locali accettabile",
+		"badSuppliedLocale" : "locale in dotazione \"{{locale}}\" non è nella lista dei locali accettabile",
+		"badParameter" : {
+			"expectsString" : "Non valido parametro - si attende valore letterale di stringa",
+			"missingKey" : "\"Key\" parametro richiesto",
+			"badPlural" : "Non valido plurale parametro - booleano o il numero previsto",
+			"badGender" : "Non valido genere parametro - si attende sia \"{{female}}\", \"{{male}}\" o \"{{neutral}}\"",
+			"badReplacements" : "Non valido \"replacements\" parametro - si aspetta oggetto JSON"
+		}
+	}
+}

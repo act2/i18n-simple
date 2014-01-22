@@ -1,0 +1,16 @@
+{
+	"errors" : {
+		"badLocalesDir" : "Répertoire locale valide - répertoire \"{{dir}}\" n'existe pas",
+		"badLocaleFile" : "Fichier de locale valide - \"{{file}}\" n'existe pas",
+		"badDefaultLocale" : "New locale par défaut \"{{locale}}\" n'est pas dans la liste des lieux acceptable",
+		"badCurrentLocale" : "New locale courante \"{{locale}}\" n'est pas dans la liste des lieux acceptable",
+		"badSuppliedLocale" : "Fourni locale \"{{locale}}\" n'est pas dans la liste des lieux acceptables",
+		"badParameter" : {
+			"expectsString" : "Paramètre non valide - s'attend valeur de chaîne littérale",
+			"missingKey" : "\"Key\" paramètre requis",
+			"badPlural" : "Paramètre non valide pluriel - prévu booléenne ou nombre",
+			"badGender" : "Paramètre de sexe non valide - attend soit \"{{female}}\", \"{{male}}\" ou \"{{neutral}}\"",
+			"badReplacements" : "Invalide \"replacements\" paramètres - s'attend objet JSON"
+		}
+	}
+}

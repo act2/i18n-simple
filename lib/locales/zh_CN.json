@@ -1,0 +1,16 @@
+{
+	"errors" : {
+		"badLocalesDir" : "无效的成语目录 - 目录 \"{{dir}}\" 不存在",
+		"badLocaleFile" : "无效的文件成语 - \"{{file}}\" 不存在",
+		"badDefaultLocale" : "新的默认成语 \"{{idiom}}\" 是不是在可以接受的成语列表",
+		"badCurrentLocale" : "新的当前成语 \"{{idiom}}\" 是不是在可以接受的成语列表",
+		"badSuppliedLocale" : "提供的成语 \"{{idiom}}\" 是不是在可以接受的成语列表",
+		"badParameter" : {
+			"expectsString" : "无效的参数 - 预计字符串值",
+			"missingKey" : "\"Key\" 所需的参数",
+			"badPlural" : "无效的复数参数 - 预期布尔或数字",
+			"badGender" : "无效的性别参数 - 无论是期待 \"{{female}}\", \"{{male}}\" 或 \"{{neutral}}\"",
+			"badReplacements" : "无效 \"replacements\" 参数 - 预计JSON对象"
+		}
+	}
+}

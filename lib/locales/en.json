@@ -1,0 +1,16 @@
+{
+	"errors" : {
+		"badLocalesDir" : "Invalid locale directory - directory \"{{dir}}\" does not exist",
+		"badLocaleFile" : "Invalid locale file - \"{{file}}\" does not exist",
+		"badDefaultLocale" : "New default locale \"{{locale}}\" is not in acceptable locales list",
+		"badCurrentLocale" : "New current locale \"{{locale}}\" is not in acceptable locales list",
+		"badSuppliedLocale" : "Supplied locale \"{{locale}}\" is not in acceptable locales list",
+		"badParameter" : {
+			"expectsString" : "Invalid parameter - expects literal string value",
+			"missingKey" : "\"Key\" parameter required",
+			"badPlural" : "Invalid plural parameter - expected boolean or number",
+			"badGender" : "Invalid gender parameter - expects either \"{{female}}\", \"{{male}}\" or \"{{neutral}}\"",
+			"badReplacements" : "Invalid \"replacements\" parameter - expects JSON object"
+		}
+	}
+}

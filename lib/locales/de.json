@@ -1,0 +1,16 @@
+{
+	"errors" : {
+		"badLocalesDir" : "Ungültige Gebietsschema Verzeichnis - Verzeichnis \"{{dir}}\" existiert nicht",
+		"badLocaleFile" : "Ungültige Gebietsschema-Datei - \"{{file}}\" existiert nicht",
+		"badDefaultLocale" : "Neue Standardgebietsschema \"{{locale}}\" ist nicht akzeptabel in Gebietsschema Liste",
+		"badCurrentLocale" : "Neue aktuelle Gebietsschema \"{{locale}}\" ist nicht akzeptabel in Gebietsschema Liste",
+		"badSuppliedLocale" : "Mitgelieferte Gebietsschema \"{{locale}}\" ist nicht akzeptabel in Gebietsschema Liste",
+		"badParameter" : {
+			"expectsString" : "Ungültige Parameter - erwartet Literalstring",
+			"missingKey" : "\"Key\" Parameter erforderlich",
+			"badPlural" : "Ungültige mehrere Parameter - erwartet boolean oder Nummer",
+			"badGender" : "Ungültige Parameter Geschlecht - erwartet entweder \"{{female}}\", \"{{male}}\" or \"{{neutral}}\"",
+			"badReplacements" : "Ungültige \"replacements\" Parameter - erwartet JSON-Objekt"
+		}
+	}
+}
