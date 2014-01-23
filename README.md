@@ -1,20 +1,22 @@
 # i18n-simple
 
-Powerful, but easy to use, i18n translation for Node.js with support for replacement variables, plurals and gender. Reads from language files stored as JSON files. Very lightweight -- only 500 SLOC (including comments).
+Powerful, but easy to use, i18n translation for Node with support for replacement variables, plurals and gender. Reads from language files stored as JSON files. Very lightweight -- only 500 SLOC (including comments).
+
+[![Build Status](https://travis-ci.org/act2/i18n-simple.png?branch=master)](https://travis-ci.org/act2/i18n-simple)
 
 ## Key Features
 * **Easy to Use** - written by a seasoned developer for developers
 * **Translation Files** - easy to create and maintain JSON files
 * **Fallback** - will automatically select matching text from default locale if match is not found in current locale
 * **Lazy Loading** - language files are not loaded into memory until required
-* **Synchronous** - no asynchronous methods so no need to worry about callbacks (for this module at least)
+* **Synchronous** - no asynchronous methods so no need to worry about callbacks
 * **Plural Support** - out of the box support for plural text selection
 * **Gender Support** - out of the box support for gender-based text selection
 * **Replacement Parameters** - supports replaceable text through named parameters
 * **Shortcuts** - can easily reference sibling elements to help you avoid defining duplicate strings in language files
 * **Self References** - can easily reference other elements in the same file as replacement values to produce complex combinations
 * **Error Handling** - supports either throwing errors or emitting events to an EventEmitter handler. 
-* **Fast** - It wouldn't be Node.js if it wasn't
+* **Fast** - It wouldn't be Node if it wasn't
 
 ## Install
 
@@ -114,7 +116,7 @@ An object literal notation of the following options:
 * **replacements** {object literal} - name / value pairs in object literal notation for value substitution in replacement strings.
 
 ## Wrapper Methods for the embedded EventEmitter class
-A Node.js EventEmitter is embedded into the i18n-simple module for error notification if bound to a handler function.  Please refer to the Node.js event documentation for details of these methods at [http://nodejs.org/api/events.html](http://nodejs.org/api/events.html)
+A Node EventEmitter is embedded into the i18n-simple module for error notification if bound to a handler function.  Please refer to the Node event documentation for details of these methods at [http://nodejs.org/api/events.html](http://nodejs.org/api/events.html)
 
 ###i18n.on(event, listener)
 ###i18n.once(event, listener)
@@ -126,7 +128,7 @@ A Node.js EventEmitter is embedded into the i18n-simple module for error notific
 
 ## Design Decisions
 1. Entries do not get added to the language files if they are not found. Instead, calls to ".t" or ".translate" return "undefined".
-2. K.I.S.S. - Keep it simple, stupid
+2. K.I.S.S. - Keep it simple, stupid [http://en.wikipedia.org/wiki/KISS_principle](http://en.wikipedia.org/wiki/KISS_principle).
 3. Lookup key values are case sensitive.
 4. The lookup keys allow for dot notation to parse multiple levels down into a JSON hierarchy. Because of this, do not use periods in the keys unless you mean for this multi-depth lookup to occur.
 5. The lookup keys best lend themselves to mnemonic-style rather than verbose.  For example, here is a snippet from the language file for this library:
@@ -233,7 +235,7 @@ Plurals may be nested within gender and vice versa. Developer's choice.
 	},
 
 
-### #Example plural nested within gender
+####Example plural nested within gender
 
 	"Goodbye": {
 		"default": "Goodbye!",

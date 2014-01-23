@@ -1,6 +1,6 @@
 {
 	"name": "i18n-simple",
-	"description": "Powerful, but easy to use, i18n translation for Node.js with support for replacement variables, plurals and gender.",
+	"description": "Powerful, but easy to use, i18n translation for Node with support for replacement variables, plurals and gender.",
 	"version": "1.0.0",
 	"keywords": [
 		"i18n",
@@ -14,14 +14,14 @@
 		"email": "info@act2hq.com",
 		"url": "http://www.act2hq.com"
 	},
-	"homepage": "http://act2hq.com/products/simple-i18n",
+	"homepage": "https://github.com/act2/i18n-simple.git",
 	"main": "./lib/i18n.js",
 	"directories": {
 		"lib": "./lib"
 	},
 	"readmeFIleName": "README.md",
 	"bugs": {
-		"url" : "TBD",
+		"url" : "https://github.com/act2/i18n-simple/issues",
 		"email" : "support@act2hq.com"
 	},
 	"repository" : {
@@ -33,10 +33,15 @@
 		"underscore.string": "*"
 	},
 	"bundledDependencies": [
-		"underscore"
+		"underscore",
+		"underscore.string"
 	],
 	"devDependencies": {
 		"chai": "*",
-		"chai-spies": "*"
+		"chai-spies": "*",
+		"mocha": "*"
+	},
+	"scripts": {
+		"test": "mocha -R spec"
 	}
 }
