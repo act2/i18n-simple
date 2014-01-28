@@ -315,11 +315,16 @@ describe('Unit tests for i18n-simple', function () {
 				should.equal('Hi, Mickey Mouse! How is Minnie?');
 		});
 
-		it('should return correct text with dot notation all references from locales file', function () {
-			i18n.init({ directory: './test/locales'});
+		it('should return correct text with dot notation all references shallow from locales file', function () {
 			i18n.translate('HelloReferencesOnly', {plural: false, gender: 'male'}).
 				should.equal('Hello, Mickey Mouse! Goodbye, sir!');
 		});
+
+		it('should return correct text with dot notation all references deep from locales file', function () {
+			i18n.translate('Hi.withRefSpouse').
+				should.equal('Hi, Mickey! How is Minnie?');
+		});
+
 	});
 
 	describe('Error Conditions and Handling', function () {

@@ -1,11 +1,18 @@
 {
 	"Hello": "Hello",
 	"name" : "Mickey Mouse",
+	"familyMouse" : {
+		"husband" : "Mickey",
+		"wife" : {
+			"firstName" : "Minnie"
+		}
+	},
 	"HelloReferencesOnly": "{{Hello}}, {{name}}! {{Goodbye}}",
 	"Hi": {
 		"noName" : "Hi",
 		"withName": "Hi, {{name}}!",
-		"withSpouse": "Hi, {{name}}! How is {{ spouse }}?"
+		"withSpouse": "Hi, {{name}}! How is {{ spouse }}?",
+		"withRefSpouse": "Hi, {{familyMouse.husband}}! How is {{ familyMouse.wife.firstName }}?"
 	},
 	"Howdy": {
 		"default": "Howdy!",
