@@ -1,7 +1,7 @@
 {
   "name": "i18n-simple",
   "description": "Powerful, but easy to use, i18n translation for Node with support for replacement variables, plurals and gender.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [
     "i18n",
     "localize",
@@ -17,7 +17,7 @@
   "homepage": "https://github.com/act2/i18n-simple.git",
   "main": "./lib/i18n.js",
   "engines": {
-	"node": ">= 0.8.0"
+    "node": ">= 0.8.0"
   },
   "directories": {
     "lib": "./lib"
