@@ -86,7 +86,7 @@ This changes the current locale to Spanish.
 
 ## Public Methods
 
-###i18n.init([options], [context])
+###i18n.init([options] [, context])
 **Options**:
 
  * **directory** - path to translation files. defaults to './locales'.
