@@ -105,7 +105,7 @@ This changes the current locale to Spanish.
 **Context**: a string identifying a named context to initialize (see context section below for more details). If no context is specified, this sets up a default context.
 Otherwise, when a string context name is passed in, it sets up a named context.
 
-###i18n.t or i18n.translate(key [, options], [, context])
+###i18n.t or i18n.translate(key [, options] [, context])
 You can either use the ".t" method if you like to keep things short and sweet, or you can use the ".translate" method if you prefer verbose. There is absolutely no difference other than the name, in fact, they both point to the same function.
 
 **Key**: JSON key value for text lookup in language file. May be dot notated for multiple level depths.
@@ -121,10 +121,10 @@ An object literal notation of the following options:
 the default context is used.
 
 ###i18n.getAttr(attribute, context)
-Returns a specific attribute (options above) for a specific context
+Returns a specific attribute (options above in init method) for a specific context
 
 ###i18n.setAttr(attribute, value, context)
-Sets a specific attribute (options above) for a specific context
+Sets a specific attribute (options above in init method) for a specific context
 
 ## Wrapper Methods for the embedded EventEmitter class
 A Node EventEmitter is embedded into the i18n-simple module for error notification if bound to a handler function.  Please refer to the Node event documentation for details of these methods at [http://nodejs.org/api/events.html](http://nodejs.org/api/events.html)
