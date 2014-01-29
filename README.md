@@ -83,11 +83,10 @@ All of the properties available in the init method can be set directly at run ti
 This changes the current locale to Spanish.
 
 	i18n.currentLocale = 'es';
-	
-	
+
 ## Public Methods
 
-###i18n.init([options])
+###i18n.init([options], [context])
 **Options**:
 
  * **directory** - path to translation files. defaults to './locales'.
@@ -103,7 +102,10 @@ This changes the current locale to Spanish.
  * **genderMaleTag** - string representing complex definition gender male tag. defaults to 'male'.
  * **genderNeutralTag** - string representing complex definition gender neutral tag. defaults to 'neutral'.
 
-###i18n.t or i18n.translate(key [, options])
+**Context**: a string identifying a named context to initialize (see context section below for more details). If no context is specified, this sets up a default context.
+Otherwise, when a string context name is passed in, it sets up a named context.
+
+###i18n.t or i18n.translate(key [, options], [, context])
 You can either use the ".t" method if you like to keep things short and sweet, or you can use the ".translate" method if you prefer verbose. There is absolutely no difference other than the name, in fact, they both point to the same function.
 
 **Key**: JSON key value for text lookup in language file. May be dot notated for multiple level depths.
@@ -114,6 +116,15 @@ An object literal notation of the following options:
 * **plural** {boolean} [true|false] - determines if plural form is used for complex language lookup
 * **gender** {string} - one of the gender tag values. default [female|male|neutral]. determines the gender for complex language lookup
 * **replacements** {object literal} - name / value pairs in object literal notation for value substitution in replacement strings.
+
+**Context**: an optional string identifying the named context to use for the translation (see context section below for more details). If no context is specified,
+the default context is used.
+
+###i18n.getAttr(attribute, context)
+Returns a specific attribute (options above) for a specific context
+
+###i18n.setAttr(attribute, value, context)
+Sets a specific attribute (options above) for a specific context
 
 ## Wrapper Methods for the embedded EventEmitter class
 A Node EventEmitter is embedded into the i18n-simple module for error notification if bound to a handler function.  Please refer to the Node event documentation for details of these methods at [http://nodejs.org/api/events.html](http://nodejs.org/api/events.html)
@@ -138,7 +149,14 @@ A Node EventEmitter is embedded into the i18n-simple module for error notificati
 		"errors" : {
 		"badParameter" : {
 			"expectsString" : "Invalid parameter - expects literal string value",
-			
+
+## Contexts
+Contexts allow for multiple translation settings each having their own set of options and translation files. This is useful when creating a package
+with i18n-simple for inclusion in another project.  The package should set its own context to a unique value (the package name is a great choice).
+Then, it must use the context parameters when invoking the translate method.  This allows the package to maintain its translations separate from the main program.
+If contexts are not used in this scenario, the i18n-simple in both the main program and the package will interfere with each other.  It is recommended that the
+main program use the default context although it is perfectly acceptable for the main program to use a named context.
+
 ## Language Files
 ### General Rules
 1. Must be properly formed JSON. To verify, use a free online tool such as [http://jsonlint.com/](http://jsonlint.com/).
@@ -267,98 +285,105 @@ The examples below all use the following language file (the actual test file for
 	
 ### Example Language File
 
-	{
-	"Hello": "Hello",
-	"name" : "Mickey Mouse",
-	"HelloReferencesOnly": "{{Hello}}, {{name}}! {{Goodbye}}",
-	"Hi": {
-		"noName" : "Hi",
-		"withName": "Hi, {{name}}!",
-		"withSpouse": "Hi, {{name}}! How is {{ spouse }}?"
-	},
-	"Howdy": {
-		"default": "Howdy!",
-		"plural": {
-			"one": {
-				"gender" : {
-					"female": "Howdy, ma'am!",
-					"male": "Howdy, sir!",
-					"neutral": "Howdy there!"
-				}
-			},
-			"other": {
-				"gender" : {
-					"female": "Howdy, ladies!",
-					"male": "Howdy, gents!",
-					"neutral": "Howdy, y'all!"
-				}
-			}
-		}
-	},
-	"Goodbye": {
-		"default": "Goodbye!",
-		"gender" : {
-			"female": {
-				"plural": {
-					"one": "Goodbye, ma'am!",
-					"other": "Goodbye, ladies!"
-				}
-			},
-			"male": {
-				"plural": {
-					"one": "Goodbye, sir!",
-					"other": "Goodbye, gents!"
-				}
-			},
-			"neutral": {
-				"plural": {
-					"one": "Goodbye there!",
-					"other": "Goodbye, y'all!"
-				}
-			}
-		}
-	},
-	"dogs" : {
-		"default" : "doggies",
-		"plural" : {
-			"one" : "dog",
-			"other" : "dogs"
-		}
-	},
-	"3rdPersonPossessiveSingular" : {
-		"default" : "her/his/its",
-		"gender" : {
-			"female" : "her",
-			"male" : "his",
-			"neutral": "its"
-		}
-	},
-	"relativeReferenceSimple" : {
-		"one" : "one",
-		"two" : "two",
-		"three" : "@one",
-		"four" : "@one"
-	},
-	"relativeReferenceComplex": {
-		"default": "default relative reference",
-		"plural": {
-			"one": {
-				"gender" : {
-					"female": "relative female {{ref}}",
-					"male": "relative male {{ref}}",
-					"neutral": "@male"
-				}
-			},
-			"other": {
-				"gender" : {
-					"female": "relative females {{ref}}",
-					"male": "relative males {{ref}}",
-					"neutral": "@male"
-				}
-			}
-		}
-	}
-}
+    {
+        "Hello": "Hello",
+        "name" : "Mickey Mouse",
+        "familyMouse" : {
+            "husband" : "Mickey",
+            "wife" : {
+                "firstName" : "Minnie"
+            }
+        },
+        "HelloReferencesOnly": "{{Hello}}, {{name}}! {{Goodbye}}",
+        "Hi": {
+            "noName" : "Hi",
+            "withName": "Hi, {{name}}!",
+            "withSpouse": "Hi, {{name}}! How is {{ spouse }}?",
+            "withRefSpouse": "Hi, {{familyMouse.husband}}! How is {{ familyMouse.wife.firstName }}?"
+        },
+        "Howdy": {
+            "default": "Howdy!",
+            "plural": {
+                "one": {
+                    "gender" : {
+                        "female": "Howdy, ma'am!",
+                        "male": "Howdy, sir!",
+                        "neutral": "Howdy there!"
+                    }
+                },
+                "other": {
+                    "gender" : {
+                        "female": "Howdy, ladies!",
+                        "male": "Howdy, gents!",
+                        "neutral": "Howdy, y'all!"
+                    }
+                }
+            }
+        },
+        "Goodbye": {
+            "default": "Goodbye!",
+            "gender" : {
+                "female": {
+                    "plural": {
+                        "one": "Goodbye, ma'am!",
+                        "other": "Goodbye, ladies!"
+                    }
+                },
+                "male": {
+                    "plural": {
+                        "one": "Goodbye, sir!",
+                        "other": "Goodbye, gents!"
+                    }
+                },
+                "neutral": {
+                    "plural": {
+                        "one": "Goodbye there!",
+                        "other": "Goodbye, y'all!"
+                    }
+                }
+            }
+        },
+        "dogs" : {
+            "default" : "doggies",
+            "plural" : {
+                "one" : "dog",
+                "other" : "dogs"
+            }
+        },
+        "3rdPersonPossessiveSingular" : {
+            "default" : "her/his/its",
+            "gender" : {
+                "female" : "her",
+                "male" : "his",
+                "neutral": "its"
+            }
+        },
+        "relativeReferenceSimple" : {
+            "one" : "one",
+            "two" : "two",
+            "three" : "@one",
+            "four" : "@one"
+        },
+        "relativeReferenceComplex": {
+            "default": "default relative reference",
+            "plural": {
+                "one": {
+                    "gender" : {
+                        "female": "relative female {{ref}}",
+                        "male": "relative male {{ref}}",
+                        "neutral": "@male"
+                    }
+                },
+                "other": {
+                    "gender" : {
+                        "female": "relative females {{ref}}",
+                        "male": "relative males {{ref}}",
+                        "neutral": "@male"
+                    }
+                }
+            }
+        }
+    }
 
 ### Example simple usage
 	// return "Hello"
@@ -419,7 +444,9 @@ Internal errors generated by the i18n-simple library return an Error object with
 ## Changelog
 
 * 1.0.0: initial stable release
-
+* 1.0.2: added node version dependencies in package.json and .travis.yml for Travis CI
+* 1.0.3: fixed issue #1 - deep reference in-file replacement broken
+* 1.1.0: major refactor to handle issue #2 - addition of multiple translation context support
 
 ## Licensed under MIT
 
