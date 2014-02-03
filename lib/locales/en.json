@@ -11,6 +11,7 @@
 			"badPlural" : "Invalid plural parameter - expected boolean or number",
 			"badGender" : "Invalid gender parameter - expects either \"{{female}}\", \"{{male}}\" or \"{{neutral}}\"",
 			"badReplacements" : "Invalid \"replacements\" parameter - expects JSON object"
-		}
+		},
+		"badJSON" : "Error in JSON file \"{{file}}\" : {{msg}}"
 	}
 }

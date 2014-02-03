@@ -11,6 +11,7 @@
 			"badPlural" : "无效的复数参数 - 预期布尔或数字",
 			"badGender" : "无效的性别参数 - 无论是期待 \"{{female}}\", \"{{male}}\" 或 \"{{neutral}}\"",
 			"badReplacements" : "无效 \"replacements\" 参数 - 预计JSON对象"
-		}
+		},
+		"badJSON" : "在JSON文件错误 \"{{file}}\" : {{msg}}"
 	}
 }

@@ -11,6 +11,7 @@
 			"badPlural" : "Parámetro no válido plural - que se espera boolean o número",
 			"badGender" : "Parámetro de género no válido - espera que sea \"{{female}}\", \"{{male}}\" o \"{{neutral}}\"",
 			"badReplacements" : "Parámetro \"replacements\" no válido - espera objeto JSON"
-		}
+		},
+		"badJSON" : "Error en el archivo JSON \"{{file}}\" : {{msg}}"
 	}
 }

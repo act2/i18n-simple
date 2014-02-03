@@ -11,6 +11,7 @@
 			"badPlural" : "Paramètre non valide pluriel - prévu booléenne ou nombre",
 			"badGender" : "Paramètre de sexe non valide - attend soit \"{{female}}\", \"{{male}}\" ou \"{{neutral}}\"",
 			"badReplacements" : "Invalide \"replacements\" paramètres - s'attend objet JSON"
-		}
+		},
+		"badJSON" : "Erreur dans le fichier JSON \"{{file}}\" : {{msg}}"
 	}
 }

@@ -11,6 +11,7 @@
 			"badPlural" : "無効な複数のパラメータ - 期待ブールまたは数値",
 			"badGender" : "無効な男女のパラメータは - 期待してのどちらか \"{{female}}\", \"{{male}}\" または \"{{neutral}}\"",
 			"badReplacements" : "無効 \"replacements\" パラメータは、 - JSONオブジェクトを想定し"
-		}
+		},
+		"badJSON" : "JSONファイルでエラーが発生しました \"{{file}}\" : {{msg}}"
 	}
 }
